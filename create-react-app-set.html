@@ -6,26 +6,231 @@
 </head>
 <body>
 	<p>
-		首先将你的文件名称改成scss结尾的文件
-		然后安装依赖 cnpm install sass-loader node-sass --save-dev
-		找到node_modules/react-scripts/config/webpack.config.dev.js文件和webpack.config.prod.js文件
-		将module配置项的最后一项配置改成如下
+		antd配置
+		yarn add antd babel-plugin-import
+		按需引入
+		
+		为减少打包后体积以及方便书写，可用babel-plugin-import插件，配置在config目录下，
+		
+		webpack.config.dev.js 和 webpack.config.prod.js文件,这里以webpack.config.dev.js举例，
+		
+		webpack.config.prod.js一样配置即可：
+		
+		// Process JS with Babel.
+				  {
+					test: /\.(js|jsx)$/,
+					include: paths.appSrc,
+					loader: require.resolve('babel-loader'),
+					options: {
+					  // 改动: 添加 antd 按需加载文件处理插件
+					  plugins: [
+						//['react-html-attrs'],//添加babel-plugin-react-html-attrs组件的插件配置
+						// 引入样式为 css
+						['import', { libraryName: 'antd', style: 'css' }],
+						// 改动: 引入样式为 less
+						//  ['import', { libraryName: 'antd', style: true }],
+					  ],
+					  // This is a feature of `babel-loader` for webpack (not Babel itself).
+					  // It enables caching results in ./node_modules/.cache/babel-loader/
+					  // directory for faster rebuilds.
+					  cacheDirectory: true,
+					},
+				  },
+		引入模块如下：
+		
+		 // scr/App.js
+		  import React, { Component } from 'react';
+		- import Button from 'antd/lib/button';
+		+ import { Button } from 'antd';
+		  import './App.css';
+	</p>
+	<p>
+		CSS Modules 配置
+		antd 和 css modules 不能混用，看知乎大神说 可以
+		
+		针对antd的css 单独写一条loader的规则,不开启 css modules。
+		
+		使用 exclude 和 include 配置
+		
+		配置在config目录下，同样修改配置 webpack.config.dev.js 文件
 		{
-			loader: require.resolve('file-loader'),
-			// Exclude `js` files to keep "css" loader working as it injects
-			// it's runtime that would otherwise processed through "file" loader.
-			// Also exclude `html` and `json` extensions so they get processed
-			// by webpacks internal loaders.
-			exclude: [/\.js$/, /\.html$/, /\.json$/,/\.scss$/],
-			options: {
-				 name: 'static/media/[name].[hash:8].[ext]',
-			},
-		},
-		{
-			test: /\.scss$/,
-			loaders: ['style-loader', 'css-loader', 'sass-loader'],
-		}
-		到此，配置完毕，记得两个文件都要改
+            test: /\.css$/,
+            exclude: /node_modules|antd\.css/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  // 改动
+                  modules: true,   // 新增对css modules的支持
+                  localIdentName: '[name]__[local]__[hash:base64:5]', //
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                },
+              },
+            ],
+          },
+          //
+          {
+            test: /\.css$/,
+            include: /node_modules|antd\.css/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  // 改动
+                  // modules: true,   // 新增对css modules的支持
+                  // localIdentName: '[name]__[local]__[hash:base64:5]', //
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                },
+              },
+            ],
+		  },
+		  下面是一个 antd 的 Button 和自己写的CSS Modules 使用小例子：
+		  import React, { Component } from 'react';
+		  import { addRecipe } from '../actions';
+		  import { Button } from 'antd';
+		  import styles from './App.css'
+		  
+		  class App extends Component {
+			state = {
+			  calendar: null
+			}
+			componentDidMount() {
+			  const { store } = this.props // 从props获取store
+			  store.subscribe(() => { // 订阅 redux store 中发生的任何变化
+				this.setState(() => ({ // 有任何变化需要调用 setState
+				  calendar: store.getState() // 将从store中获取state将它放入本地组件state中
+				}))
+			  })
+			}
+			submitFood = () => {
+			  this.props.store.dispatch(addRecipe({//store.dispatch调用addRecipe动作生成器
+				day: 'monday',
+				meal: 'breakfast',
+				recipe: {
+				  label: this.input.value
+				}
+			  }))
+			  this.input.value = ''//将输入值重置为一个空的字符串
+			}
+			render() {
+			  return (
+				<div>
+				  <input
+					type='text'
+					ref={(input)=>this.input = input}
+					placeholder="Monday's Breakfast"
+				  />
+				  <Button type="primary" onClick={this.submitFood}>Submit</Button>
+		  
+				  <pre className={styles.input}>Monday's Breakfast:{this.state.calendar&&this.state.calendar.monday.breakfast}</pre>
+		  
+				</div>
+			  );
+			}
+		  }
+		  
+		  export default App
+		  参考学习 CSS Modules 的阮一峰老师写的用法教程 http://www.ruanyifeng.com/blog/2016/06/css_modules.html
+		  这里简单使用下 react-css-modules,代码如下：
+		  import React, { Component } from 'react';
+		  import { addRecipe } from '../actions';
+		  import { Button } from 'antd';
+		  import CSSModules from 'react-css-modules'
+		  import styles from './App.css'
+		  
+		  class App extends Component {
+			state = {
+			  calendar: null
+			}
+			componentDidMount() {
+			  const { store } = this.props // 从props获取store
+			  store.subscribe(() => { // 订阅 redux store 中发生的任何变化
+				this.setState(() => ({ // 有任何变化需要调用 setState
+				  calendar: store.getState() // 将从store中获取state将它放入本地组件state中
+				}))
+			  })
+			}
+			submitFood = () => {
+			  this.props.store.dispatch(addRecipe({//store.dispatch调用addRecipe动作生成器
+				day: 'monday',
+				meal: 'breakfast',
+				recipe: {
+				  label: this.input.value
+				}
+			  }))
+			  this.input.value = ''//将输入值重置为一个空的字符串
+			}
+			render() {
+			  return (
+				<div>
+				  <input
+					type='text'
+					ref={(input)=>this.input = input}
+					placeholder="Monday's Breakfast"
+				  />
+				  <Button type="primary" onClick={this.submitFood}>Submit</Button>
+		  
+				  <pre styleName='input'>Monday's Breakfast:{this.state.calendar&&this.state.calendar.monday.breakfast}</pre>
+		  
+				</div>
+			  );
+			}
+		  }
+		  
+		  export default CSSModules(App, styles);
+	</p>
+	<p>
+		主要差别在于：
+		
+		+ import CSSModules from 'react-css-modules'
+		
+		- <pre className={styles.input}>
+		+ <pre styleName='input'>
+		
+		- export default App
+		+ export default CSSModules(App, styles);
 	</p>
 </body>
 </html>
