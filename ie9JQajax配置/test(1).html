@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://study.cloudcc.com/front/js/jquery.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	// 测试的video在谷歌和火狐都能通过ajax正常拿到数据然而IE直接进error。
+	// 首先JQ1.9及以下才支持IE，于是我把JQ换成了1.8
+	// 其次之前请求的时候在服务器端已经解决了跨域的问题，但是后来发现IE方面依然进error
+	// 是因为IE版本低的缘故 无法识别后台允许跨域的标记。
+	// 于是我在JS中加了
+	// jQuery.support.cors=true;
+	// 就能正确获取到后台的json数据啦~
+	jQuery.support.cors=true;
+	var strDomain = "http://192.168.1.47:8080";
+	function dopost(num) {
+		console.log("num>>>",num)
+		if (1 == num) {
+		console.log(num)
+			$.ajax({
+				url : strDomain+ "/insert",
+				type : "post",
+				contentType : "application/json",
+				dataType : "text",
+				crossDomain:true,
+				data : JSON.stringify({
+					"dbName" : "test",
+					"tableName" : "tp_dat_test",
+					"field" : [ {
+						"name" : "customName",
+						"value" : "Lincon"
+					}, {
+						"name" : "payment",
+						"value" : "123456.78"
+					} ]
+				}),
+				success : function(data) {
+				
+					console.log("success");
+				},
+				error : function() {
+					console.log(JSON.stringify({
+					"dbName" : "test",
+					"tableName" : "tp_dat_test",
+					"field" : [ {
+						"name" : "customName",
+						"value" : "Lincon"
+					}, {
+						"name" : "payment",
+						"value" : "123456.78"
+					} ]
+				}));
+					console.log("error");
+				}
+			});
+		} else if (2 == num) {
+			$.ajax({
+				url : strDomain + "/update",
+				type : "post",
+				contentType : "application/json",
+				dataType : "text",
+				data : JSON.stringify({
+					"dbName" : "test",
+					"tableName" : "tp_dat_test",
+					"id" : "70",
+					"field" : [ {
+						"name" : "customName",
+						"value" : "Lincon"
+					}, {
+						"name" : "payment",
+						"value" : "123456.78"
+					} ]
+
+				}),
+				success : function(data) {
+					console.log("success");
+				},
+				error : function() {
+					console.log("error");
+				}
+			});
+		} else if (3 == num) {
+			$.ajax({
+				url : strDomain + "/getRecordByID",
+				type : "post",
+				contentType : "application/json",
+				dataType : "text",
+				data : JSON.stringify({
+					"dbName" : "test",
+					"tableName" : "tp_dat_test",
+					"id" : "70",
+					"field" : [ {
+						"name" : "customName"
+					}, {
+						"name" : "payment"
+					} ]
+				}),
+				success : function(data) {
+					console.log("success");
+					console.log(data)
+				},
+				error : function() {
+					console.log("error");
+				}
+			});
+		} else if (4 == num) {
+			$
+					.ajax({
+						url : strDomain + "/insertBySQL",
+						type : "post",
+						contentType : "application/json",
+						dataType : "text",
+						data : JSON
+								.stringify({
+									"dbName" : "test",
+									"sql" : "insert into tp_dat_test (name,age) values (?, ?)",
+									"param" : [ 
+									{
+										"value" : "Lincon"
+									}, {
+										"value" : "28"
+									} ]
+
+								}),
+						success : function(data) {
+							console.log("success");
+						},
+						error : function() {
+							console.log("error");
+						}
+					});
+		} else if (5 == num) {
+			$.ajax({
+				url : strDomain + "/updateBySQL",
+				type : "post",
+				contentType : "application/json",
+				dataType : "text",
+				data : JSON.stringify({
+					"dbName" : "test",
+					"sql" : "update tp_dat_test set name=?,age=? Where id=?",
+					"param" : [ {
+						"value" : "Lincon"
+					}, {
+						"value" : "28"
+					}, {
+						"value" : "70"
+					} ]
+
+				}),
+				success : function(data) {
+					console.log("success");
+				},
+				error : function() {
+					console.log("error");
+				}
+			});
+		} else if (6 == num) {
+			$
+					.ajax({
+						url : strDomain + "/listBySimpleSQL",
+						type : "post",
+						contentType : "application/json",
+						dataType : "text",
+						data : JSON
+								.stringify({
+									"dbName" : "test",
+									"sql" : "select id,age from tp_dat_test Where customName=? And age=? ",
+									"param" : [ {
+										"value" : "Lincon"
+									}, {
+										"value" : "28"
+									} ]
+
+								}),
+						success : function(data) {
+							console.log(data);
+						},
+						error : function() {
+							console.log("error");
+						}
+					});
+		} else if (7 == num) {
+			$
+					.ajax({
+						url : strDomain + "/listBySQL",
+						type : "post",
+						contentType : "application/json",
+						dataType : "text",
+						data : JSON
+								.stringify({
+									"dbName" : "test",
+									"sql" : "select * from tp_dat_test Where customName=:leadname",
+									"param" : [ {
+										"name":"leadname",
+										"value" : ["Lincon"]
+									} ]
+
+								}),
+						success : function(data) {
+							console.log(data);
+						},
+						error : function() {
+							console.log("error");
+						}
+					});
+		} else if (8 == num) {
+			$
+					.ajax({
+						url : strDomain + "/listPageDataBySimpleSQL",
+						type : "post",
+						contentType : "application/json",
+						dataType : "text",
+						data : JSON
+								.stringify({
+									"dbName" : "test",
+									"sql" : "select id,age from tp_dat_test Where customName=? And age=? ",
+									"pageSize" : "20",
+									"dbtype":"mysql",
+									"pageNum" : "5",
+									"param" : [ {
+										"value" : "Lincon"
+									}, {
+										"value" : "28"
+									} ]
+
+								}),
+						success : function(data) {
+							console.log(data);
+						},
+						error : function() {
+							console.log("error");
+						}
+					});
+		} else if (9 == num) {
+			$.ajax({
+				url : strDomain + "/listPageDataBySQL",
+				type : "post",
+				contentType : "application/json",
+				dataType : "text",
+				data : JSON.stringify({
+					"dbName" : "test",
+					"sql" : "select * from tp_dat_test Where customName=:leadname ",
+					"pageSize" : "20",
+					"pageNum" : "1",
+					"dbtype":"mysql",
+					"param" : [ {
+						"name" : "leadname",
+						"value" : ["Lincon"]
+					} ]
+
+				}),
+				success : function(data) {
+					console.log("success");
+				},
+				error : function() {
+					console.log("error");
+				}
+			});
+		}
+	}
+</script>
+</head>
+
+
+<body>
+	<button onclick="dopost(1)">按钮1</button>
+	<button onclick="dopost(2)">按钮2</button>
+	<button onclick="dopost(3)">按钮3</button>
+	<button onclick="dopost(4)">按钮4</button>
+	<button onclick="dopost(5)">按钮5</button>
+	<button onclick="dopost(6)">按钮6</button>
+	<button onclick="dopost(7)">按钮7</button>
+	<button onclick="dopost(8)">按钮8</button>
+	<button onclick="dopost(9)">按钮9</button>
+</body>
+
+</html>
