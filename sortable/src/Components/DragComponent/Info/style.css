@@ -1,0 +1,124 @@
+/************* 基本信息 *************/
+.base-info{
+  margin-bottom: 30px;
+}
+
+.base-info .title{
+  color: #16325C;
+  font-size:13px;
+  line-height: 35px;
+}
+
+.base-info .box,.base-info .edit-box{
+  width:95%;
+  height: 50px;
+  line-height: 50px;
+}
+.base-info .box100,.base-info .edit-box{
+  width:100%;
+  height: 50px;
+  line-height: 50px;
+}
+.base-info .box,.base-info .box100{
+  border-bottom: 1px solid #EDEEF1;
+}
+.base-info .box1{
+  border-bottom: 0px solid #EDEEF1;
+}
+.base-info .boxA{
+  border-bottom: 1px solid #EDEEF1;
+  position: relative;
+  height:405px;
+}
+.base-info .boxB{
+  border-bottom: 0px solid #EDEEF1;
+  position: relative;
+  height:400px;
+  /*overflow: auto;*/
+  margin-top: 10PX;
+}
+
+.base-info .ant-transfer{
+  width: 650px;
+  margin: 0 auto;
+}
+.base-info .sub{
+  float: left;
+  color: #73849D;
+}
+
+.base-info .srot{
+  position: absolute;
+  right: 120px;
+  top: 100px;
+}
+
+.base-info .srot a{
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  border:1px solid #dddddd;
+  margin: 8px 0;
+  text-align: center;
+  line-height: 25px;
+  color: #999;
+}
+
+.base-info .srot a:hover{
+  background: #0e77ca;
+  color: #ffffff;
+  border: 1px solid #0e77ca;
+}
+
+.base-info .srot a i{
+  font-size: 18px;
+}
+
+.base_btn{
+  text-align: center;
+}
+
+.base-info .sub i{
+  color: #FF9900;
+  font-size:13px;
+  margin-right:4px;
+}
+
+.base-info .main{
+  float: right;
+  color: #16325C;
+}
+
+.base-info .main .sel{
+  width: 150px;
+  margin-top: 10px;
+}
+
+.base-info .main .icon-pencil{
+  color: #C1C1C1;
+  cursor: pointer;
+  margin-left:4px;
+}
+.base-info .main .icon-pencil:hover{
+  color: #16325C;
+}
+
+.base-info .title .icon-sort-down{
+  font-size:18px;
+  vertical-align: text-bottom;
+  margin-right:4px;
+}
+
+.base-info .box .main .anticon-edit{
+  cursor: pointer;
+  font-size: 18px;
+  color: #ccc;
+  position: relative;
+  top: 3px;
+  margin-left: 10px;
+}
+
+.base-info .box .main .anticon-edit:hover{
+  color: #108ee9;
+}

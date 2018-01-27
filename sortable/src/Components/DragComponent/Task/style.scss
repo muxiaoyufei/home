@@ -1,0 +1,48 @@
+.task {
+  height: 100%;
+  width:100%;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  h3{
+    text-align: left;
+    margin:20px 0 0 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  ul{
+    margin-bottom: 20px;
+    li{
+      width: 100%;
+      padding-left: 20px;
+      margin-top: 10px;
+      text-align: left;
+      line-height: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      .line{
+        a{
+          text-decoration: line-through;
+        }     
+      }
+    }
+    .all{
+      float: right;
+      margin-right: 20px;
+    }
+  }
+  .freeList{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    line-height: 14px;
+    color:#7c7a98;
+    text-align: center;
+    margin-bottom: 10px;
+  }  
+}

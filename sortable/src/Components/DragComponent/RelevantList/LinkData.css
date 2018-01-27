@@ -1,0 +1,75 @@
+.ant-table-scroll-position-left {
+  width: 100%;
+  padding-top: 15px;
+}
+.objectList .ant-pagination{
+  display: none !important;
+}
+.objectList .link_card .link_cardchild{
+  background: #fff;
+}
+.objectList .link_card .link_cardchild:hover{
+  background: #ecf6fd;
+}
+
+/*************** 相关列表 **************/
+.list-title{
+  background: #F4F6F9;
+  border:1px solid #D8DDE6;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding:15px;
+  overflow: auto;
+  margin-bottom:20px;
+}
+
+.list-title .title{
+  text-align: left;
+}
+.list-title .title h4{
+  color: #16325C;
+  font-size:16px;
+  font-weight:400;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.list-title .title .grap{
+  width:24px;
+  height:24px;
+  display: inline-block;
+  background: #A094ED;
+  text-align: center;
+  line-height:24px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin-right:10px;
+}
+
+.list-title .title .grap .icon-user{
+  color: #FFFFff;
+  font-size:14px;
+}
+
+.list-title .ant-table-thead > tr > th,.list-title .ant-table-placeholder{
+  background: none;
+}
+
+.list-title .ant-table-small .ant-table-thead > tr > th{
+  background: none;
+}
+
+.list-title .ant-table-small .ant-table-tbody > tr > td{
+  color: 666;
+}
+
+.list-title .ant-table-small .ant-table-tbody > tr > td b{
+  font-weight: 400;
+}
+
+.list-title .ant-table-small{
+  border: none;
+  padding: 0;
+}

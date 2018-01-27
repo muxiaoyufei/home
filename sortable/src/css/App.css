@@ -1,0 +1,690 @@
+@import '~antd/dist/antd.css';
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #ECF1F5;
+}
+
+.ant-btn{
+    border-radius: 3px;
+}
+
+/************* 构建器页面  *************/
+.layoutModal .ant-modal-body{
+    padding-bottom: 110px;
+}
+
+.layout-top{
+    background: #108EE9;
+    height: 50px;
+}
+.layout-body-submenu{
+    background: #ffffff;
+    height: 40px;
+    border-bottom: 1px solid #D6DDE5;
+}
+
+.layout-body-left{
+    background: #404040;
+}
+
+.container{
+    width: 96%;
+    position: fixed;
+    height: 90%;
+    left: 50%;
+    top:5%;
+    box-shadow: 0 0 5px #cccccc;
+    margin-left: -48%;
+    z-index: 5;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+.layout-body-container{
+    padding: 0 20px;
+}
+
+.layout-body-container table{
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    cursor: pointer;
+}
+
+.layout-body-container table td{
+    text-align: center;
+    border: 1px dashed  #cccccc;
+    width: 50px;
+}
+
+.layout-body-container .ant-breadcrumb-link{
+    color: #16325C;
+}
+
+.bread-layout{
+    padding: 15px 25px 0 30px;
+}
+
+.layout-body-main .anticon-edit{
+    position: absolute;
+    right: 45px;
+    top: 17px;
+    font-size: 16px;
+    color: #b7b7b7;
+    cursor: pointer;
+    display: none;
+}
+.layout-body-main .anticon-close{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    font-size: 16px;
+    color: #b7b7b7;
+    cursor: pointer;
+    display: none;
+}
+
+.layout-body-main:hover.layout-body-main i{
+    display: block;
+}
+
+.layout-body-main .ant-card-body{
+    height: 220px;
+}
+
+.card-item .ant-card-body{
+    height: 95px;
+}
+
+.layout-input{
+    padding-bottom: 15px;
+}
+
+.layout-input input{
+    width: 80%;
+}
+
+.layout-input span{
+    font-size: 12px;
+    color: #16325C;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected{
+    background-color: #5f5f5f;
+}
+
+.ant-layout-sider-children .ant-menu-item a{
+    position: absolute;
+    top: 0;
+    left: 50px;
+}
+
+/************* 构建器布局Table  *************/
+.layoutcontainer .inch{
+    width: 5%;
+    height: 10px;
+    position: absolute;
+    top: 10px;
+    border-left: 2px solid #CAD6DD;
+}
+.layoutcontainer .inchmain{
+    width: 5%;
+    height: 20px;
+    position: absolute;
+    border-left: 2px solid #CAD6DD;
+}
+
+.layoutcontainer .inchvalue{
+    color: #16325C;
+    font-size: 14px;
+}
+
+ .layouttable table,.edittable {
+    width: 100%;
+    border-collapse: collapse;
+    height: 100%;
+    table-layout: fixed;
+    cursor: pointer;
+}
+
+.layouttable table th,.edittable  th{
+    width: 25%;
+}
+
+.layouttable table tr,.edittable tr{
+    height: 25%;
+}
+.layouttable table thead tr,.edittable thead tr{
+    height: 0;
+}
+
+.layouttable table td,.edittable td{
+    border: 1px dashed  #cccccc;
+    min-height: 50px;
+}
+
+.layouttable table td:hover,.edittable td:hover{
+    background: #F3F7F8;
+}
+
+.layoutcontainer .layouttablewrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.layouttable,.edittable{
+    height: 100%;
+}
+
+ .imageicons{
+    position: absolute;
+    bottom: 0px;
+    height: 33px;
+    display: none;
+    z-index: 10;
+}
+.imageicons div{
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    cursor: pointer;
+}
+.mergeicon{
+    background: #60B2F7;
+    border-radius: 50%;
+    background: url('../imgs/merge_wev8.png') no-repeat center center;
+}
+.mergeicon:hover{
+    background: #94CCFA;
+    background: url('../imgs/merge-hot_wev8.png') no-repeat center center;
+}
+.splitall{
+    background: #32D491;
+    border-radius: 50%;
+    background: url('../imgs/splitall_wev8.png') no-repeat center center;
+}
+.splitall:hover{
+    background: #69E0AD;
+    background: url('../imgs/splitall-hot_wev8.png') no-repeat center center;
+}
+.hsplit{
+    background: #FF763C;
+    border-radius: 50%;
+    background: url('../imgs/hsplit_wev8.png') no-repeat center center;
+}
+.hsplit:hover{
+    background: #FFAC88;
+    background: url('../imgs/hsplit-hot_wev8.png') no-repeat center center;
+}
+.vsplit{
+    background: #FDC449;
+    border-radius: 50%;
+    background: url('../imgs/vsplit_wev8.png') no-repeat center center;
+}
+.vsplit:hover{
+    background: #FED37A;
+    background: url('../imgs/vsplit-hot_wev8.png') no-repeat center center;
+}
+.hline{
+    height: 1px;
+    border-top:2px solid #CAD6DD ;
+    position: absolute;
+    display: none;
+}
+.vline{
+    width: 1px;
+    border-left:2px solid #CAD6DD ;
+    position: absolute;
+    display: none;
+}
+
+.modal-opertion{
+    padding: 20px 0;
+    text-align: center;
+}
+
+.modal-opertion button{
+    margin: 0 10px;
+}
+
+/*********** 拖拽组件页面 *************/
+.componentList{
+    width: 200px;
+    padding: 10px 15px;
+    float: left;
+    height: 90%;
+    overflow: auto;
+}
+
+.componentList .item{
+    font-size: 12px;
+    line-height: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.componentList .item img{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.componentList .item i{
+    display: none;
+}
+
+.container .title{
+    padding: 10px 15px;
+}
+
+.container .anticon-close,.containerTable .anticon-close{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    font-size: 16px;
+    color: #999;
+    cursor: pointer;
+}
+
+.container .footer{
+    text-align: center;
+    padding: 10px 0;
+    background: #f1f1f1;
+    border-top: 1px solid #D6DDE5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+.container .footer button{
+    margin: 0 5px;
+}
+.containerDrag{
+    padding: 15px;
+    display: flex;
+    overflow: auto;
+}
+
+.drag-input{
+    margin-bottom: 20px;
+}
+
+.drag-input .select .ant-select{
+    display: block;
+}
+
+.drag-input span{
+    margin-right: 10px;
+}
+
+.layout-preview{
+    padding: 0 15px;
+}
+.layout-preview table{
+    width: 200px;
+    height: 150px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.layout-preview table td{
+    text-align: center;
+    border: 1px dashed #cccccc;
+    width: 50px;
+}
+
+.layout-preview table td .item{
+    display: none;
+}
+
+/*********** 布局列表 *********/
+.listlayout-container{
+    padding: 5px 15px;
+    margin-top: 25px;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+.listlayout-container li{
+    line-height: 40px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.listlayout-container li:last-child{
+    border-bottom: none;
+}
+
+/*********** 品牌库 *********/
+.layout-body-container{
+    padding: 0 20px;
+}
+
+.layout-body-container .ant-breadcrumb-link{
+    color: #16325C;
+}
+
+.bread-layout{
+    padding: 15px 25px 0 30px;
+}
+
+.layout-body-main{
+    border-radius: 2px;
+    padding: 10px;
+    position: relative;
+}
+
+.layout-body-main ul{
+    height: 40px;
+    display: flex;
+    width: 100%;
+    border: 1px solid #eee;
+}
+
+.layout-body-main ul li{
+    float: left;
+    height: 100%;
+    width: 100%;
+}
+
+.layout-body-main p{
+    text-align: center;
+    margin-top: 10px;
+}
+.layout-body-main .ant-card{
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.layout-body-main .ant-card-body{
+    padding: 15px 24px;
+}
+
+.layout-body-main .anticon-edit,.layout-body-main .anticon-close{
+    position: absolute;
+    top: 17px;
+    font-size: 16px;
+    color: #b7b7b7;
+    cursor: pointer;
+    display: none;
+}
+.layout-body-main .anticon-close{
+    right: 15px;
+}
+
+.layout-body-main .anticon-edit{
+    right: 45px;
+}
+
+.layout-body-main:hover.layout-body-main i{
+    display: block;
+}
+
+.sel-layout{
+    width: 600px;
+    height: 500px;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-left: -300px;
+    background: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 0 9px #cccccc;
+}
+
+.container .title,.sel-layout .title,.sel-layout .mome,.sel-layout .select{
+    padding: 10px 15px;
+}
+
+.container .footer,.sel-layout .footer{
+    text-align: center;
+    padding: 10px 0;
+    background: #f1f1f1;
+    border-top: 1px solid #D6DDE5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.container .group{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    flex-direction: row;
+}
+
+.container .title,.sel-layout .title,.sel-layout .mome,.sel-layout .select{
+    padding: 10px 15px;
+}
+
+.container .footer button,.sel-layout .footer button{
+    margin: 0 5px;
+}
+
+.sel-layout .anticon-close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.containerDrag{
+    padding: 15px;
+    height: 90%;
+}
+
+.containerTable{
+    border-collapse: collapse;
+    height: 95%;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.containerTable td{
+    vertical-align: top;
+    border: 1px dashed #d9d9d9;
+    padding: 10px;
+}
+
+.containerTable td .item{
+    position: relative;
+}
+
+.containerTable td .item .img,.containerTable td .item .tit{
+    display: none;
+}
+
+.themenList>li{
+    line-height: 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    border: 1px solid #fff;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.themenList li ul{
+    display: flex;
+}
+
+.themenList li ul li{
+    height: 25px;
+    width: 100%;
+}
+
+.componentList .ant-collapse-content-box{
+    padding: 5px 0;
+}
+
+.themenList .color{
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+}
+
+.themenList .swatch{
+    padding: 2px;
+    background: #fff;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    float : right;
+    border:1px solid #ccc;
+    cursor: pointer;
+}
+
+.themenList .popover{
+    position: absolute;
+    z-index: 2;
+}
+
+.themenList .cover{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.Resizer {
+    background: #000;
+    opacity: .2;
+    z-index: 1;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+}
+
+ .Resizer:hover {
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
+}
+
+ .Resizer.horizontal {
+    height: 11px;
+    margin: -5px 0;
+    border-top: 5px solid rgba(255, 255, 255, 0);
+    border-bottom: 5px solid rgba(255, 255, 255, 0);
+    cursor: row-resize;
+    width: 100%;
+}
+
+.Resizer.horizontal:hover {
+    border-top: 5px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+}
+
+.Resizer.vertical {
+    width: 11px;
+    margin: 0 -5px;
+    border-left: 5px solid rgba(255, 255, 255, 0);
+    border-right: 5px solid rgba(255, 255, 255, 0);
+    cursor: col-resize;
+}
+
+.Resizer.vertical:hover {
+    border-left: 5px solid rgba(0, 0, 0, 0.5);
+    border-right: 5px solid rgba(0, 0, 0, 0.5);
+}
+.Resizer.disabled {
+  cursor: not-allowed;
+}
+.Resizer.disabled:hover {
+  border-color: transparent;
+}
+
+.containerTable td .hotdeal,
+.containerTable td .immediate,
+.containerTable td .task,
+.containerTable td .recentRecord,
+.containerTable td .performance,
+.containerTable td .assistant,
+
+.containerTable td .L_Progress,
+.containerTable td .active-tabs,
+.containerTable td .chatter-tabs,
+.containerTable td .objectList,
+.containerTable td .base-info,
+.containerTable td .tools,
+.containerTable td .custom
+{
+    display: block;
+    padding: 25px 10px 10px 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(230, 230, 230);
+    margin-bottom: 15px;
+    background: #fff;
+}
+
+.containerTable td .custom{
+    width: 100%;
+    height: 200px;
+}
+
+.containerTable td .custom .anticon-setting{
+    position: absolute;
+    right: 35px;
+    top: 9px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.containerTable td .body-show{
+    display: block;
+    margin-bottom: 15px;
+}
+
+.containerTable td .L_Progress{
+    display: flex
+}
+
+.hotdeal ,.immediate,.task,.recentRecord,.performance,.assistant,.body-show,.L_Progress,.chatter-tabs,.active-tabs,.objectList,.base-info,.tools,.custom{
+    display: none;
+}
+
+.containerTable .item>img,.containerTable .item>span{
+    display: none;
+}
+
+.dataHTML .item,.dataHTML{
+    display: none;
+}
+
+.ant-message-notice-content{
+    background: none;
+    padding: 0;
+}
+
+.ant-message-notice-content .ant-message-success,.ant-message-notice-content .ant-message-error{
+    padding: 8px 60px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.ant-message-notice-content .ant-message-success{
+    background: #37984c;
+}
+
+.ant-message-notice-content .ant-message-error{
+    background: #f5222d;
+}
+
+.ant-message-notice-content .ant-message-success i,.ant-message-notice-content .ant-message-error i{
+    font-size: 18px;
+    color: #ffffff;
+}

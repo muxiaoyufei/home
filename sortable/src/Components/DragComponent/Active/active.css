@@ -1,0 +1,13 @@
+.active .btn {
+    margin: 15px 0 ;
+}
+/*活动->新建 from下item margin-bottom*/
+.ant-form-item{
+    margin-bottom: 0px!important;
+}
+.active .search-inputs{
+    margin-bottom: 0px!important;
+}
+.active .search-top{
+	margin-top: 15px!important;
+}

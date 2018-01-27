@@ -1,0 +1,44 @@
+.hotdeal {
+  height: 100%;
+  width:100%;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px; 
+  margin-top: 10px;
+  padding-bottom: 10px;
+  h3{
+    text-align: left;
+    margin: 20px 0 0 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  ul{
+    margin: 20px;
+    li{
+      text-align: left;
+      font-size: 14px;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 3px 0;
+      a{
+        font-size: 14px; 
+      }
+      span{
+        text-align: center;
+        margin-right: 10px;
+      }
+    }
+    .noneEvent{
+      width: 100%;
+      font-size: 14px;
+      color:#7c7a98;
+      text-align: center; 
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  
+}

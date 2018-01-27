@@ -1,0 +1,12 @@
+.performance {
+    height: 100%;
+    width:100%;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px; 
+    margin-top: 10px;
+}
+.performance h3{
+    text-align: left;
+    margin: 10px 0 0 20px;
+    padding-bottom: 10px;
+}  

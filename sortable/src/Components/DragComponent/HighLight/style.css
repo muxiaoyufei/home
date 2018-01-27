@@ -1,0 +1,25 @@
+.body-show{
+  background: #F7F9FB;
+  border-top: 1px solid #E6EAEE;
+  border-bottom: 1px solid #E6EAEE;
+  padding: 5px;
+}
+
+.body-show .lightingShow{
+  padding: 10px 20px;
+}
+
+.body-show .lightingShow .anticon-user{
+  font-size: 14px;
+  color: #08c;
+  margin-left: 5px;
+}
+
+.body-show .ant-row{
+  display: flex;
+}
+
+.body-show .lightingShow p{
+  line-height: 25px;
+  color: #999;
+}

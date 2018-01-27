@@ -1,0 +1,44 @@
+@import '~antd/dist/antd.css';
+
+.header{
+    background: #ffffff;
+    height: 100px;
+    border-bottom: 2px solid #0070D2;
+    padding: 0;
+    line-height: 30px;
+}
+
+.header .anticon-exclamation-circle,.header .anticon-pie-chart,.header .anticon-star{
+    font-size: 22px;
+    margin: 20px;
+    color: #9FAAB5;
+    float: right;
+    cursor: pointer;
+}
+
+.header-box{
+    border-bottom: 1px solid #D8DDE6;
+}
+
+.menu-box,.header-box{
+    padding: 0 1.25em;
+}
+
+.menu-box .all-app{
+    height:35px;
+    line-height: 35px;
+    border-right:1px solid #D8DDE6;
+    font-size:14px;
+    color: #16325C
+}
+
+.ant-menu{
+    line-height: 35px;
+}
+
+.ant-menu-horizontal{
+    background: none;
+    border-bottom: none;
+    height: 35px;
+    overflow: hidden;
+}

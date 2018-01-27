@@ -1,0 +1,286 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 315080 */
+  src: url('http://at.alicdn.com/t/font_315080_klbv7h82j6a2lnmi.eot');
+  src: url('http://at.alicdn.com/t/font_315080_klbv7h82j6a2lnmi.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_315080_klbv7h82j6a2lnmi.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_315080_klbv7h82j6a2lnmi.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_315080_klbv7h82j6a2lnmi.svg#iconfont') format('svg');
+}
+.assistant {
+  height: 100%;
+  width:100%;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;  
+  margin-top: 10px;
+  padding-bottom: 10px;
+  h3{
+    text-align: left;
+    margin: 10px 0 0 5px;
+  }
+  .collapse{
+    border-bottom:1px solid #ccc;
+    padding: 5px; 
+  }
+  .collapse-header{
+    height: 30px;
+    dl{
+      display: initial;
+      margin: 0 5px;
+      .arrow{
+        float: left;
+        margin-top: 3px;
+        margin-right: 5px;
+        i{
+          float: left;
+          height: 15px;
+          width: 15px;
+          line-height: 15px;
+          text-align: center;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+          font:14px;
+          color: #ccc;
+        }  
+      }
+      dt{
+        float: left;
+        margin-right:10px;
+        i{
+          width: 25px;
+          height: 25px;
+          float: left;
+          color:#fff;
+          font-size: 18px;
+          text-align: center;
+          line-height: 25px;
+          font-family:"iconfont" !important;
+          font-size:24px;
+          font-style:normal;
+          -webkit-font-smoothing: antialiased;
+          -webkit-text-stroke-width: 0.2px;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        .crown{
+          background: none;
+          color: #f9b85a;
+          font-size: 25px;
+        }
+        .star{
+          background: #f88b64;
+          color:#fff; 
+        }
+        .overTask{
+          background: #66c9e2;
+        }
+        .UntreatActivit{
+          background: #808ddd;
+        }
+      }
+      .ant-col-16{
+        width: 100%;
+        line-height: 12px;
+        text-align:left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      } 
+    }
+  }
+  .createIcon{
+    width: 50px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    float: right;
+    margin-right:0px; 
+    em{
+      float: left;
+      width: 24px;
+      height: 24px;
+      i{
+        font-size: 18px;
+        line-height: 24px;
+        float: left;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+      }
+    }
+    .leftIcon{
+      border-right:1px solid #ccc; 
+    }
+  }
+  .collapse-content{
+    .ant-row{
+      text-align: left;  
+      a{
+        line-height: 16px;
+        padding-left:20px; 
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      } 
+      p{
+        line-height: 16px;
+        padding-left:20px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        a{
+          padding: 0;
+        }
+      }
+    }
+    .Btn{
+      margin: 10px 40px 0;
+      height: 30px;
+      .ant-col-10{
+        margin-right: 10px;
+        height: 30px;
+      }
+      button{
+        width: 100%;
+      }
+    }
+  }
+  .freeList{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    line-height: 14px;
+    color:#7c7a98;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+.assistantPopover{
+  .popoverTitle {
+    height: 25px;
+    i{
+      width: 25px;
+      height: 25px;
+      float: left;
+      background: #f9b85a;
+      color:#fff;
+      font-size: 24px;
+      text-align: center;
+      line-height: 25px;
+      margin-right:10px; 
+      font-family:"iconfont" !important;
+      font-size:16px;
+      font-style:normal;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0.2px;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .crown{
+      background: none;
+      color: #f9b85a;
+      font-size: 25px;
+    }
+    .star{
+      background: #f88b64;
+      color:#fff; 
+    }
+    .overTask{
+      background: #66c9e2;
+      font-size: 24px;
+    }
+    .UntreatActivit{
+      background: #808ddd;
+    }
+    span{
+      font-size: 18px;
+      line-height: 25px;
+    }
+  }
+ .ant-popover-inner-content{
+    .detail{
+      .ant-col-12{
+        span{
+          float: left;
+          width: 100%;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 255px) {
+  .assistant{
+    .collapse-header{
+      height: 25px;
+      dl{
+        display: inline-block;
+        margin: 0 3px;
+        .arrow{
+          float: left;
+          margin-top: 2px;
+          margin-right: 3px;
+          i{
+            float: left;
+            height: 13px;
+            width: 13px;
+            line-height: 13px;
+            font:12px;
+          } 
+        }
+        dt{
+          float: left;
+          margin-right:3px;
+          i{
+            width: 20px;
+            height: 20px;
+            font-size: 14px;
+            line-height: 20px;
+          }
+        } 
+      }
+    }
+    .ant-col-12{
+      width: 40%;
+    }
+    .createIcon{
+      background: #fff;
+      width: 0;
+      border: 0;
+      em{
+        display: none;
+        i{
+          display: none;
+        }
+      }
+    }
+  }
+}
+.NewEventModal{
+  .active .btn {
+    margin: 15px 0 ;
+  }
+  /*活动->新建 from下item margin-bottom*/
+  .ant-form-item{
+    margin-bottom: 0px!important;
+  }
+  .active .search-inputs{
+    margin-bottom: 0px!important;
+  }
+  .active .search-top{
+    margin-top: 15px!important;
+  }
+}
+.NewTaskModal{
+  .active .btn {
+    margin: 15px 0 ;
+  }
+  /*活动->新建 from下item margin-bottom*/
+  .ant-form-item{
+    margin-bottom: 0px!important;
+  }
+  .active .search-inputs{
+    margin-bottom: 0px!important;
+  }
+  .active .search-top{
+    margin-top: 15px!important;
+  }
+}

@@ -1,0 +1,65 @@
+.home {
+    .containerTable td .hotdeal, .containerTable td .immediate, 
+    .containerTable td .task, .containerTable td .recentRecord, 
+    .containerTable td .performance, .containerTable td .assistant, 
+    .containerTable td .L_Progress, .containerTable td .active-tabs,
+    .containerTable td .chatter-tabs, .containerTable td .objectList, 
+    .containerTable td .base-info, .containerTable td .tools,
+    .containerTable td .custom {
+        display: block;
+        padding: 0;
+        border: 1px solid rgb(230, 230, 230);
+        padding-bottom: 10px;
+    }
+    color: black;
+    width:100%;
+    // $type: homeDev;
+    $type:home;
+    table {
+        @if $type == homeDev {
+            border-collapse: collapse;
+            height: 90%;
+            table-layout: fixed;
+            width: 98%;
+            margin: auto;
+            margin-top:10px; 
+            vertical-align: top;
+            tr{
+                td{
+                    border: 1px dashed #ccc;
+                    padding: 5px;
+                    vertical-align: top; 
+                }
+            }
+         
+        } @else {
+            border-collapse: collapse;
+            height: 90%;
+            table-layout: fixed;
+            width: 98%;
+            margin: auto;
+            vertical-align: top; 
+            tr{
+                td{
+                    border: none;
+                    padding: 5px;
+                    vertical-align: top; 
+                }
+            }
+        }
+      }
+    // table{
+    //     border-collapse: collapse;
+    //     height: 90%;
+    //     table-layout: fixed;
+    //     width: 98%;
+    //     margin: auto;
+    //     margin-top:10px; 
+    // }
+    // tr{
+    //     td{
+    //         border: 1px dashed #ccc;
+    //         height: 100px;
+    //     }
+    // }
+}
